@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">AI展会</string>
+    <string name="sunmi">SUNMI</string>
+    <string name="game">Game</string>
+    <string name="unkonw">未知</string>
+    <string name="recing">识别中</string>
+    <string name="ai_title">AI智慧双眼</string>
+    <string name="ai_title1">老板 \“称\” 心如意的超能力帮手</string>
+    <string name="ai_title2" >限时通关游戏，赢取奖励</string>
+    <string name="jump_start" >点击开始</string>
+
+    <string name="gane_title1" >Round1: 45秒内，放一个%s到托盘</string>
+    <string name="gane_title2" >Round2: 称1000g左右的%s</string>
+    <string name="gane_title2_1">20秒的时间，应该足够了</string>
+    <string name="gane_title3" >Round3: 你能在20秒内，称5块钱的%s吗？</string>
+    <string name="gane_title_sub" >我会告诉你重量和价格。</string>
+
+    <string name="dialog_text" >做得不错！快让我们继续吧！</string>
+    <string name="back_home" >返回主菜单</string>
+    <string name="next_level" >进入下一关</string>
+    <string name="try_again_btn" >再试一次</string>
+    <string name="take_shop" >拿起商品放置托盘即可</string>
+    <string name="type" >种类</string>
+    <string name="weight" >重量（克）</string>
+    <string name="price" >价格（元）</string>
+    <string name="try_again" >再试一次，这次肯定没问题！</string>
+    <string name="game_over" >游戏通关！</string>
+    <string name="tip_lucky" >仔细看小票，为你准备了些礼物哦！</string>
+    <string name="tip_print">做为老板的小助手，我是不是名副其实的优秀吖！
+                                \n拿着小票到前台，
+                                \n可以换一份我为你准备的商米小礼品哦！
+                                \n如果你拍一段视频上传抖音并@商米
+                                \n还可以领取一个商米定制版环保袋！
+        \n
+                                           \n计数  %d
+    </string>
+    <string name="tip_print1">
+        \n
+                                           \n计数  %d
+    </string>
+</resources>

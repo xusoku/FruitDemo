@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="765dp"
+    android:layout_height="620dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/bg_end">
+
+
+    <LinearLayout
+        android:layout_centerInParent="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            app:cardCornerRadius="9dp">
+        <ImageView
+            android:layout_width="720dp"
+            android:layout_height="325dp"
+            android:src="@mipmap/image_bg"
+            android:background="#FF6F3F"
+            android:scaleType="fitXY"
+            />
+        </androidx.cardview.widget.CardView>
+        <com.sunmi.fruit.util.AppTextView
+            android:id="@+id/end_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/game_over"
+            android:textStyle="bold"
+            android:textSize="41sp"
+            android:layout_marginTop="16dp"
+            android:textColor="@color/white"/>
+        <com.sunmi.fruit.util.AppTextView
+            android:id="@+id/end_text1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/tip_lucky"
+            android:textSize="31sp"
+            android:layout_marginTop="4dp"
+            android:textColor="@color/white"/>
+
+        <com.sunmi.fruit.util.AppButton
+            android:id="@+id/confirm_btn"
+            android:layout_below="@id/dialog_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="31sp"
+            android:layout_marginTop="21dp"
+            android:minWidth="337dp"
+            android:minHeight="90dp"
+            android:paddingStart="40dp"
+            android:paddingTop="15dp"
+            android:paddingEnd="40dp"
+            android:paddingBottom="15dp"
+            android:gravity="center"
+            android:textColor="@color/black"
+            android:background="@drawable/bg_jump"
+            android:text="@string/back_home"/>
+    </LinearLayout>
+
+
+
+</RelativeLayout>

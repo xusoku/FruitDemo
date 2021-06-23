@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@mipmap/main_bg">
+
+    <com.sunmi.fruit.util.AppTextView
+        android:id="@+id/text_game_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="80dp"
+        android:layout_marginTop="69dp"
+        android:textColor="@color/white"
+        android:text="adsf"
+        android:textSize="54sp"
+        android:textStyle="bold" />
+
+    <com.sunmi.fruit.util.AppTextView
+        android:id="@+id/text_game_title2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/text_game_title"
+        android:layout_marginStart="80dp"
+        android:layout_marginTop="9dp"
+        android:textColor="@color/white"
+        android:text="adsf"
+        android:textSize="36sp"
+        android:textStyle="bold" />
+
+    <com.sunmi.fruit.util.CircleProgressView
+        android:id="@+id/progress"
+        android:layout_width="130dp"
+        android:layout_height="130dp"
+        app:cpv_bottomColor="#4cffffff"
+        app:cpv_topColor="@color/white"
+        app:cpv_circleWidth="15dp"
+        android:layout_alignParentRight="true"
+        android:layout_marginEnd="80dp"
+        android:layout_marginTop="59dp"
+        />
+
+    <RelativeLayout
+        android:id="@+id/relative"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/text_game_title2"
+        android:layout_marginStart="80dp"
+        android:layout_marginTop="48dp">
+
+        <com.sunmi.fruit.util.AppTextView
+            android:id="@+id/text_game_tip"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:text="@string/take_shop"
+            android:textColor="@color/white"
+            android:textSize="27sp"
+            android:textStyle="bold" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/text_game_tip"
+            android:layout_centerVertical="true"
+            android:layout_marginTop="34dp"
+            android:background="@color/white"
+            android:orientation="horizontal"
+            app:cardBackgroundColor="@color/white"
+            app:cardCornerRadius="15dp"
+            app:contentPadding="5dp">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="602dp"
+                android:layout_height="336dp"
+                android:layout_gravity="center"
+                app:cardCornerRadius="15dp">
+
+                <com.sunmi.fruit.util.AutoFitTextureView
+                    android:id="@+id/textureView"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+            </androidx.cardview.widget.CardView>
+        </androidx.cardview.widget.CardView>
+
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@id/relative"
+        android:layout_marginStart="60dp"
+        android:paddingTop="51dp"
+        android:layout_toEndOf="@id/relative">
+
+        <LinearLayout
+            android:id="@+id/linear"
+            android:layout_width="518dp"
+            android:layout_height="200dp"
+            android:background="@drawable/bg_linear"
+            android:orientation="horizontal"
+            android:paddingLeft="39dp">
+
+            <LinearLayout
+                android:id="@+id/linear_type"
+                android:layout_width="159dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <com.sunmi.fruit.util.AppTextView
+                    android:id="@+id/text_type"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/type"
+                    android:textColor="@color/color_9D9D9D"
+                    android:textSize="27sp"
+                    android:textStyle="bold" />
+
+                <com.sunmi.fruit.util.AppTextView
+                    android:id="@+id/text_game_type"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text=""
+                    android:textColor="@color/color_Yellow"
+                    android:textSize="36sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/linear_weight"
+                android:layout_width="159dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <com.sunmi.fruit.util.AppTextView
+                    android:id="@+id/text_weight"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/weight"
+                    android:textColor="@color/color_9D9D9D"
+                    android:textSize="27sp"
+                    android:textStyle="bold" />
+
+                <com.sunmi.fruit.util.AppTextView
+                    android:id="@+id/text_game_weight"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="0"
+                    android:textColor="@color/black"
+                    android:textSize="36sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/linear_price"
+                android:layout_width="159dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <com.sunmi.fruit.util.AppTextView
+                    android:id="@+id/text_price"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/price"
+                    android:textColor="@color/color_9D9D9D"
+                    android:textSize="27sp"
+                    android:textStyle="bold" />
+
+                <com.sunmi.fruit.util.AppTextView
+                    android:id="@+id/text_game_price"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="0.00"
+                    android:textColor="@color/black"
+                    android:textSize="36sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+        </LinearLayout>
+
+
+        <com.sunmi.fruit.util.AppButton
+            android:id="@+id/btn_game"
+            android:layout_below="@id/linear"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/bg_jump"
+            android:minWidth="271dp"
+            android:minHeight="90dp"
+            android:paddingStart="40dp"
+            android:paddingTop="15dp"
+            android:paddingEnd="40dp"
+            android:paddingBottom="15dp"
+            android:text="@string/jump_start"
+            android:textColor="#2E160C"
+            android:textSize="36sp"
+            android:textStyle="bold" />
+    </RelativeLayout>
+
+
+
+</RelativeLayout>

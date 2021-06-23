@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@mipmap/main_bg"
+    android:paddingStart="90dp">
+
+    <!--    <TextView-->
+    <!--        android:id="@+id/ai_sunmi"-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:text="@string/sunmi"-->
+    <!--        android:layout_marginTop="100dp"-->
+    <!--        android:textColor="@color/white"-->
+    <!--        android:textSize="32sp"-->
+    <!--        />-->
+    <!--    <TextView-->
+    <!--        android:id="@+id/ai_game"-->
+    <!--        android:layout_toRightOf="@id/ai_sunmi"-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:text="@string/game"-->
+    <!--        android:layout_marginTop="100dp"-->
+    <!--        android:textColor="@color/white"-->
+    <!--        android:layout_marginStart="13dp"-->
+    <!--        android:textSize="32sp"-->
+    <!--        />-->
+
+    <ImageView
+        android:id="@+id/image_logo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="105dp"
+        android:scaleType="centerInside"
+        android:src="@mipmap/logo" />
+
+    <com.sunmi.fruit.util.SwitchCompatEx
+        android:id="@+id/switchs"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="110dp"
+        android:layout_alignParentEnd="true"
+        android:layout_gravity="center"
+        android:layout_marginEnd="90dp"
+        android:minHeight="60dp"
+        android:textOff="中"
+        android:textOn="Eng"
+        app:switchMinWidth="190dp" />
+
+    <com.sunmi.fruit.util.CircleProgressView
+        android:id="@+id/progress"
+        android:layout_width="130dp"
+        android:layout_height="130dp"
+        app:cpv_bottomColor="#4cffffff"
+        app:cpv_topColor="@color/white"
+        app:cpv_circleWidth="15dp"
+        android:layout_marginEnd="80dp"
+        android:layout_marginTop="59dp"
+        android:visibility="gone"
+        />
+    <RelativeLayout
+        android:id="@+id/relative"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/image_logo"
+        android:layout_marginTop="70dp">
+
+        <com.sunmi.fruit.util.AppTextView
+            android:id="@+id/ai_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/ai_title"
+            android:textColor="@color/white"
+            android:textSize="90sp"
+            android:textStyle="bold" />
+
+        <com.sunmi.fruit.util.AppTextView
+            android:id="@+id/ai_title1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/ai_title"
+            android:text="@string/ai_title1"
+            android:textColor="@color/white"
+            android:textSize="63sp"
+            android:textStyle="bold" />
+
+        <com.sunmi.fruit.util.AppTextView
+            android:id="@+id/ai_title2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/ai_title1"
+            android:layout_marginTop="9dp"
+            android:text="@string/ai_title2"
+            android:textColor="@color/white"
+            android:textSize="45sp" />
+    </RelativeLayout>
+
+    <com.sunmi.fruit.util.AppButton
+        android:id="@+id/btn_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/relative"
+        android:layout_marginTop="60dp"
+        android:background="@drawable/bg_jump"
+        android:paddingStart="40dp"
+        android:paddingTop="15dp"
+        android:paddingEnd="40dp"
+        android:paddingBottom="15dp"
+        android:text="@string/jump_start"
+        android:textColor="#2E160C"
+        android:textSize="42sp"
+        android:textStyle="bold" />
+
+
+
+</RelativeLayout>

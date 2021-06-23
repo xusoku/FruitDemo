@@ -1,0 +1,124 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+android {
+    compileSdkVersion 30
+    buildToolsVersion "28.0.3"
+
+    defaultConfig {
+        applicationId "com.sunmi.fruit"
+        minSdkVersion 21
+        targetSdkVersion 30
+        versionCode 2
+        versionName "1.1"
+        buildConfigField("int", "Environment", "1")
+    }
+    lintOptions {
+        abortOnError false
+    }
+    aaptOptions {
+        cruncherEnabled = true
+    }
+    dexOptions {
+        preDexLibraries false
+        javaMaxHeapSize "4g"
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    signingConfigs {
+        sunmi {
+            storeFile file('../sunmi.keystore')
+            storePassword "sunmi388"
+            keyAlias "Sunmi"
+            keyPassword "sunmi388"
+        }
+    }
+
+    buildTypes {
+        release {
+            debuggable false
+            zipAlignEnabled true
+            shrinkResources false
+//            minifyEnabled true
+            buildConfigField("int", "Environment", "1")
+            signingConfig signingConfigs.sunmi
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+
+        uat {
+            debuggable false
+            zipAlignEnabled true
+            shrinkResources false
+//            minifyEnabled true
+            buildConfigField("int", "Environment", "2")
+            signingConfig signingConfigs.sunmi
+        }
+        tes {
+            debuggable true
+            zipAlignEnabled true
+            buildConfigField("int", "Environment", "3")
+            signingConfig signingConfigs.sunmi
+        }
+        dev {
+            debuggable true
+            zipAlignEnabled true
+            buildConfigField("int", "Environment", "4")
+            signingConfig signingConfigs.sunmi
+
+        }
+        cte {
+            debuggable true
+            zipAlignEnabled true
+            buildConfigField("int", "Environment", "5")
+            signingConfig signingConfigs.sunmi
+        }
+        debug {
+            initWith tes
+            debuggable true
+        }
+
+    }
+
+    // 配置\\
+    android.applicationVariants.all {
+        variant ->
+            if (variant.buildType.name != "debug") {
+                System.out.println("gradle  "+variant.buildType.name);
+                variant.getPackageApplicationProvider().get().outputDirectory = new File(rootDir.path + "/build/outputs/apk/")
+//                variant.getPackageApplicationProvider().get().outputDirectory = new File("build/outputs/apk/" + variant.versionName + "/" + System.getenv("BUILD_NUMBER"))
+                System.out.println("gradle1  "+ new File(rootDir.path + "/build/outputs/apk/").getAbsolutePath());
+                System.out.println("gradle2  "+ new File("build/outputs/apk/" + variant.versionName + "/" + System.getenv("BUILD_NUMBER")).getAbsolutePath());
+            }
+            variant.outputs.all {
+                outputFileName = "SunmiFruitDemo_v" + variant.versionName + "_" + variant.buildType.name + ".apk"
+            }
+
+    }
+
+    configurations.all {
+        resolutionStrategy{
+            exclude group: 'com.android.support'
+        }
+    }
+}
+
+
+dependencies {
+    implementation fileTree(dir: "libs", include: ["*.jar"])
+    implementation 'androidx.appcompat:appcompat:1.2.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+    implementation 'androidx.cardview:cardview:1.0.0'
+    compileOnly 'com.sunmi:SunmiSDK:1.1.0'
+
+//    implementation 'com.sunmi:SunmiHttpLib:1.0.35'
+
+    implementation 'com.alibaba:fastjson:1.1.71.android'
+
+    implementation 'com.sunmi:printerlibrary:1.0.13'
+
+    implementation 'com.squareup.okhttp3:okhttp:3.10.0'
+    implementation 'com.google.code.gson:gson:2.6.2'
+
+}

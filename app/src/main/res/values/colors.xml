@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+
+    <color name="white">#FFFFFF</color>
+    <color name="black">#000000</color>
+    <color name="red">#ff0000</color>
+    <color name="blue">#0000ff</color>
+    <color name="green">#00ff00</color>
+
+    <color name="transparent">#00000000</color>
+    <color name="transparent_black10">#19000000</color>
+    <color name="transparent_black20">#33000000</color>
+    <color name="transparent_black30">#4c000000</color>
+    <color name="transparent_black40">#66000000</color>
+    <color name="transparent_black50">#7f000000</color>
+    <color name="transparent_black60">#99000000</color>
+    <color name="transparent_black70">#b2000000</color>
+    <color name="transparent_black80">#cc000000</color>
+    <color name="transparent_black90">#e5000000</color>
+
+    <!-- PagerSlidingTabStrip -->
+    <color name="background_tab_pressed">#6633B5E5</color>
+
+    <!-- SwipeRefreshLayout -->
+    <color name="pull_to_refresh">#FF6900</color>
+
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+
+
+    <color name="maincolor">#FF6934</color>
+    <color name="maincolor1">#ef6934</color>
+    <color name="textcolor">#333c4f</color>
+    <color name="textcolor60">#99333c4f</color>
+    <color name="indicatorcolor">#ff6000</color>
+    <color name="indicatorcolor1">#66ff6000</color>
+    <color name="exceptioncolor">#bd4c53</color>
+    <color name="backcolor">#e3e4e6</color>
+    <color name="backcolor1">#ededf0</color>
+    <color name="fontcolor">#858a95</color>
+    <color name="fontcolor80">#cc858a95</color>
+    <color name="background_gray">#f5f5f5</color>
+    <color name="separate">#19000000</color>
+    <color name="background_tint">#eeeeee</color>
+    <color name="black_red">#bd4351</color>
+    <color name="color_f8f8f8">#f8f8f8</color>
+    <color name="color_9D9D9D">#9D9D9D</color>
+    <color name="color_F14D4D">#F14D4D</color>
+    <color name="color_Yellow">#F8E71C</color>
+
+</resources>
