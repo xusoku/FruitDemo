@@ -100,7 +100,7 @@ public class MainActivity2 extends BaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main2);
+        setContentView(R.layout.activity_main3);
         isEnd=false;
         ActionBar actionBar = getSupportActionBar();
         actionBar.hide();
@@ -176,7 +176,7 @@ public class MainActivity2 extends BaseActivity {
                                 return;
                             }
                             text_game_type.setText(isEn ? nameF : Constant.hashName.get(nameF));
-                            Toast.makeText(MainActivity2.this, nameF, Toast.LENGTH_SHORT).show();
+//                            Toast.makeText(MainActivity2.this, nameF, Toast.LENGTH_SHORT).show();
                             if (currentLevel == 1) {
                                 if (nameF.contains(name)) {
                                     text_game_type.setTextColor(Color.GREEN);
@@ -190,7 +190,7 @@ public class MainActivity2 extends BaseActivity {
                                         public void run() {
                                             showNextDialog(true);
                                         }
-                                    },1000);
+                                    },1500);
 
                                 } else {
                                     text_game_type.setTextColor(Color.RED);
@@ -209,7 +209,7 @@ public class MainActivity2 extends BaseActivity {
                                             public void run() {
                                                 showNextDialog(true);
                                             }
-                                        },1000);
+                                        },1500);
 
                                     }
                                 } else {
@@ -229,7 +229,7 @@ public class MainActivity2 extends BaseActivity {
                                             public void run() {
                                                 showEndDialog();
                                             }
-                                        },1000);
+                                        },500);
 
                                     }
                                 } else {
