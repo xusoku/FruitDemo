@@ -86,7 +86,7 @@
             android:textSize="63sp"
             android:textStyle="bold" />
 
-        <com.sunmi.fruit.util.AppTextView
+        <com.sunmi.fruit.util.AppMediumTextView
             android:id="@+id/ai_title2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

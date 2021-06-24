@@ -457,7 +457,7 @@ public class MainActivity2 extends BaseActivity {
         ((TextView) (customEndDialog.getViews().get(0))).setText(MyApp.mApp.getString(R.string.back_home));
         ((TextView) (customEndDialog.getViews().get(2))).setText(MyApp.mApp.getString(R.string.tip_lucky));
         ((TextView) (customEndDialog.getViews().get(1))).setText(MyApp.mApp.getString(R.string.game_over));
-        countSecond = 3;
+        countSecond = 10;
         handler.sendEmptyMessageDelayed(4, 1000);
     }
 

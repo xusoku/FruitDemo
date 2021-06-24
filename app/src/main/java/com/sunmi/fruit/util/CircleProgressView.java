@@ -13,6 +13,9 @@ import android.util.TypedValue;
 import android.view.View;
 import android.view.animation.DecelerateInterpolator;
 
+import androidx.core.content.res.ResourcesCompat;
+
+import com.sunmi.fruit.MyApp;
 import com.sunmi.fruit.R;
 
 
@@ -143,8 +146,9 @@ public class CircleProgressView extends View {
         textPaint.setTextSize(50);
         textPaint.setColor(Color.WHITE);
         textPaint.setStyle(Paint.Style.FILL);
-        Typeface font = Typeface.create(Typeface.SANS_SERIF, Typeface.BOLD);
-        textPaint.setTypeface( font );
+        Typeface plain = ResourcesCompat.getFont(MyApp.mApp, R.font.heavy);
+//        Typeface font = Typeface.create(plain, Typeface.BOLD);
+        textPaint.setTypeface( plain );
         Paint.FontMetrics fm = textPaint.getFontMetrics();
         mTxtHeight = (int) Math.ceil(fm.descent - fm.ascent);
     }
@@ -170,7 +174,7 @@ public class CircleProgressView extends View {
     private void drawText(Canvas canvas, int center) {
 
         //字体
-        String txt = currentValue + "s";
+        String txt = currentValue + "";
         mTxtWidth = textPaint.measureText(txt, 0, txt.length());
         canvas.drawText(txt, center - mTxtWidth / 2, center + mTxtHeight / 3, textPaint);
 
@@ -269,9 +273,16 @@ public class CircleProgressView extends View {
             percent = maxValue;
         }
         this.currentValue = percent;
-        if(percent==10||percent==8||percent==6){
+        int per80= (int) (maxValue*0.8f);
+        int per60= (int) (maxValue*0.6f);
+        int per50= (int) (maxValue*0.5f);
+        int per40= (int) (maxValue*0.4f);
+        int per35= (int) (maxValue*0.35f);
+
+        LogSunmi.e("percent","  per80="+per80+"  per60="+per60+"  per50="+per50+"  per40="+per40+"  per35="+per35);
+        if(percent==per80||percent==per60||percent==per50||percent==per40){
             Utils.animationScale(this);
-        }else if(percent<=5){
+        }else if(percent<=per35){
             Utils.animationScale(this,true);
         }
         if(percent==0){

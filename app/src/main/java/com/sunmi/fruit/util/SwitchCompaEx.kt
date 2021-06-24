@@ -7,13 +7,16 @@ import android.graphics.drawable.GradientDrawable
 import android.util.AttributeSet
 import android.util.TypedValue
 import androidx.appcompat.widget.SwitchCompat
+import androidx.core.content.res.ResourcesCompat
+import com.sunmi.fruit.MyApp
+import com.sunmi.fruit.R
 
 class SwitchCompatEx : SwitchCompat {
 
     companion object {
 
         val TRACK_COLOR = 0x00000000.toInt()
-        val TRACK_STROKE_WIDTH = 2f.dp2Px.toInt()
+        val TRACK_STROKE_WIDTH = 3f.dp2Px.toInt()
         val TRACK_STROKE_COLOR = 0xB2FFFFFF.toInt()
         val TRACK_LABEL_COLOR = 0xFFFFFFFF.toInt()
         val TRACK_LABEL_SIZE = 27f.sp2Px
@@ -52,7 +55,7 @@ class SwitchCompatEx : SwitchCompat {
         isAntiAlias = true
         textSize = TRACK_LABEL_SIZE
         color = TRACK_LABEL_COLOR
-
+        typeface = ResourcesCompat.getFont(MyApp.mApp, R.font.heavy)
     }
 
     private val thumbLabelPaint = Paint().apply {
@@ -61,6 +64,7 @@ class SwitchCompatEx : SwitchCompat {
         color = THUMB_LABEL_COLOR
         typeface= Typeface.DEFAULT_BOLD
         isFakeBoldText=true
+        typeface = ResourcesCompat.getFont(MyApp.mApp, R.font.heavy)
     }
 
     private val thumbLabel

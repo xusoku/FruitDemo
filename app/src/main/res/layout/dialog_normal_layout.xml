@@ -29,7 +29,7 @@
             android:layout_centerHorizontal="true"
             android:layout_below="@id/dialog_title">
 
-        <com.sunmi.fruit.util.AppButton
+        <com.sunmi.fruit.util.AppMediumButton
             android:id="@+id/confirm_btn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -44,7 +44,7 @@
             android:textColor="@color/black"
             android:background="@drawable/confrim_bg"
             android:text="@string/back_home"/>
-        <com.sunmi.fruit.util.AppButton
+        <com.sunmi.fruit.util.AppMediumButton
             android:id="@+id/cancel_btn"
             android:layout_toRightOf="@id/confirm_btn"
             android:layout_width="wrap_content"
