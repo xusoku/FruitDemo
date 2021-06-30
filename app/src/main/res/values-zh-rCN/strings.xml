@@ -10,11 +10,12 @@
     <string name="ai_title2" >限时通关游戏，赢取奖励</string>
     <string name="jump_start" >点击开始</string>
 
-    <string name="gane_title1" >关卡1: 45秒内，放一个%s到托盘</string>
-    <string name="gane_title2" >关卡2: 称1000g左右的%s</string>
+    <string name="gane_title1" >第一关: 快速称好 %d 块钱的%s。</string>
+    <string name="gane_title2" >第二关: 快速称好 %d g左右的%s。</string>
     <string name="gane_title2_1">30秒的时间，应该足够了</string>
-    <string name="gane_title3" >关卡3: 你能在20秒内，称5块钱的%s吗？</string>
+    <string name="gane_title3" >第三关: 快速称好 %d 块钱左右的%s。</string>
     <string name="gane_title_sub" >我会告诉你重量和价格。</string>
+    <string name="single_type" >单价(元/斤)</string>
 
     <string name="dialog_text" >做得不错！快让我们继续吧！</string>
     <string name="back_home" >返回主菜单</string>

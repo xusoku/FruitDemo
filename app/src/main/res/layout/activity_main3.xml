@@ -8,12 +8,18 @@
 
 
 
+    <RelativeLayout
+        android:id="@+id/relative_main3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="50dp"
+        android:layout_marginTop="59dp">
     <com.sunmi.fruit.util.CircleProgressView
         android:id="@+id/progress"
         android:layout_width="130dp"
         android:layout_height="130dp"
         android:layout_marginStart="80dp"
-        android:layout_marginTop="59dp"
+        android:layout_centerVertical="true"
         android:layout_marginEnd="20dp"
         app:cpv_bottomColor="#4cffffff"
         app:cpv_circleWidth="15dp"
@@ -21,13 +27,13 @@
 
     <com.sunmi.fruit.util.AppTextView
         android:id="@+id/text_game_title"
-        android:layout_toRightOf="@id/progress"
+        android:layout_toEndOf="@id/progress"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="49dp"
         android:text="adsf"
         android:textColor="@color/white"
-        android:textSize="48sp"
+        android:layout_centerVertical="true"
+        android:textSize="55sp"
         android:textStyle="bold" />
 
     <com.sunmi.fruit.util.AppTextView
@@ -40,31 +46,40 @@
         android:text="adsf"
         android:textColor="@color/white"
         android:textSize="36sp"
+        android:visibility="gone"
         android:textStyle="bold" />
 
-
+    </RelativeLayout>
     <LinearLayout
         android:id="@+id/linear_all"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/text_game_title2"
+        android:layout_below="@id/relative_main3"
         android:layout_marginStart="80dp"
         android:layout_marginTop="48dp"
         android:background="@drawable/bg_linear"
         android:orientation="horizontal">
 
+
         <RelativeLayout
             android:layout_width="500dp"
             android:layout_height="wrap_content"
-            android:padding="51dp">
+            android:paddingStart="51dp"
+            android:paddingTop="51dp"
+            android:paddingBottom="51dp">
 
             <LinearLayout
-                android:id="@+id/linear_type"
-                android:layout_width="159dp"
+                android:id="@+id/linear1"
+                android:layout_width="match_parent"
                 android:layout_height="150dp"
+                android:orientation="horizontal">
+            <LinearLayout
+                android:id="@+id/linear_type"
+                android:layout_width="189dp"
+                android:layout_height="150dp"
+                android:layout_weight="1"
                 android:layout_gravity="center"
-                android:orientation="vertical"
-                android:paddingTop="20dp">
+                android:orientation="vertical">
 
                 <com.sunmi.fruit.util.AppMediumTextView
                     android:id="@+id/text_type"
@@ -74,23 +89,50 @@
                     android:textColor="@color/color_9D9D9D"
                     android:textSize="27sp"
                     android:textStyle="bold" />
-
                 <com.sunmi.fruit.util.AppTextView
                     android:id="@+id/text_game_type"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="7dp"
-                    android:text="========="
-                    android:textColor="@color/red"
-                    android:textSize="40sp"
+                    android:text="红苹果"
+                    android:textSize="36sp"
                     android:textStyle="bold" />
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/linear_type1"
+                android:layout_width="189dp"
+                android:layout_height="150dp"
+                android:layout_weight="1"
+                android:layout_gravity="center"
+                android:layout_marginStart="30dp"
+                android:layout_toEndOf="@id/linear_type"
+                android:orientation="vertical">
+
+                <com.sunmi.fruit.util.AppMediumTextView
+                    android:id="@+id/text_type1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/single_type"
+                    android:textColor="@color/color_9D9D9D"
+                    android:textSize="27sp"
+                    android:textStyle="bold" />
+                <com.sunmi.fruit.util.AppTextView
+                    android:id="@+id/text_game_type1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="7dp"
+                    android:text="0.00"
+                    android:textColor="@color/color_9D9D9D"
+                    android:textSize="36sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
             </LinearLayout>
 
             <LinearLayout
                 android:id="@+id/linear"
                 android:layout_width="match_parent"
                 android:layout_height="150dp"
-                android:layout_below="@id/linear_type"
+                android:layout_below="@id/linear1"
                 android:orientation="horizontal">
 
                 <LinearLayout
@@ -116,7 +158,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="7dp"
                         android:text="000"
-                        android:textColor="@color/black"
+                        android:textColor="@color/color_9D9D9D"
                         android:textSize="36sp"
                         android:textStyle="bold" />
                 </LinearLayout>
@@ -127,7 +169,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:layout_weight="1"
-                    android:layout_marginStart="50dp"
+                    android:layout_marginStart="30dp"
                     android:orientation="vertical">
 
                     <com.sunmi.fruit.util.AppMediumTextView
@@ -145,7 +187,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="7dp"
                         android:text="0.00"
-                        android:textColor="@color/black"
+                        android:textColor="@color/color_9D9D9D"
                         android:textSize="36sp"
                         android:textStyle="bold" />
                 </LinearLayout>

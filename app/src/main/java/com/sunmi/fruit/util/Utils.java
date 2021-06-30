@@ -10,6 +10,7 @@ import android.graphics.BitmapFactory;
 import android.os.Build;
 import android.util.Base64;
 import android.view.View;
+import android.view.animation.DecelerateInterpolator;
 
 
 import com.sunmi.fruit.MyApp;
@@ -145,9 +146,9 @@ public class Utils {
 
     public static void animationScale(View v, boolean isflag) {
         if (animatorX == null)
-            animatorX = ObjectAnimator.ofFloat(v, "ScaleX", 1.0F, 0.6F, 1.1F, 1.0F);
+            animatorX = ObjectAnimator.ofFloat(v, "ScaleX", 0.9F, 0.6F, 1.0F, 0.9F);
         if (animatorY == null)
-            animatorY = ObjectAnimator.ofFloat(v, "ScaleY", 1.0F, 0.6F, 1.1F, 1.0F);
+            animatorY = ObjectAnimator.ofFloat(v, "ScaleY", 0.9F, 0.6F, 1.0F, 0.9F);
         if (isflag) {
             animatorX.setRepeatCount(-1);
             animatorY.setRepeatCount(-1);
@@ -155,7 +156,8 @@ public class Utils {
         if (animatorSet == null)
             animatorSet = new AnimatorSet();
         animatorSet.playTogether(animatorX, animatorY);
-        animatorSet.setDuration(isflag ? 200 : 500);
+        animatorSet.setDuration(isflag ? 300 : 500);
+//        animatorSet.setInterpolator(new DecelerateInterpolator());
         animatorSet.start();
     }
 

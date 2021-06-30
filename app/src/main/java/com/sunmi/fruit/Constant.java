@@ -15,31 +15,78 @@ import java.util.HashMap;
 public class Constant {
 
     public static String locName="zh";
+    public static final ArrayList<String> arrayBreadType=new ArrayList<>();
     public static final ArrayList<String> arrayType=new ArrayList<>();
     public static final HashMap<String, String> hashName=new HashMap<String,String>();
+    public static final HashMap<String, String> hashNameEn=new HashMap<String,String>();
     public static final HashMap<String, Float> hashPrice=new HashMap<String,Float>();
+    public static final HashMap<String, Integer> hasBreadPrice=new HashMap<String,Integer>();
+    public static final HashMap<String, Integer> hasfruitWeight=new HashMap<String,Integer>();
 
     static {
+        arrayBreadType.add("bread3");
+        arrayBreadType.add("bread2");
+        arrayBreadType.add("bread4");
+
         arrayType.add("apple");
+        arrayType.add("green-apple");
         arrayType.add("pear");
-        arrayType.add("orange");
         arrayType.add("pitaya");
         arrayType.add("lemon");
-        arrayType.add("bread");
 
-        hashName.put("apple","苹果");
+        hashName.put("apple","红苹果");
+        hashName.put("green-apple","青苹果");
         hashName.put("pear","梨");
-        hashName.put("orange","橙子");
         hashName.put("pitaya","火龙果");
         hashName.put("lemon","柠檬");
-        hashName.put("bread","面包");
 
-        hashPrice.put("apple",0.0225f);   //100g/2.25元  计算 1g 多少钱
-        hashPrice.put("pear",0.0153f);         //320g/4.9元
-        hashPrice.put("orange",0.0043f);     //1300g/5.6元
-        hashPrice.put("pitaya",0.1234f);
-        hashPrice.put("lemon",0.0234f);
-        hashPrice.put("bread",1.3456f);
+        hashName.put("bread2","吐司");
+        hashName.put("bread3","甜甜圈");
+        hashName.put("bread4","小面包");
+
+        hashNameEn.put("apple","apples");
+        hashNameEn.put("green-apple","green apples");
+        hashNameEn.put("pear","pears");
+        hashNameEn.put("pitaya","pitayas");
+        hashNameEn.put("lemon","lemons");
+
+        hashNameEn.put("bread2","toasts");
+        hashNameEn.put("bread3","donuts");
+        hashNameEn.put("bread4","buns");
+
+        hashPrice.put("apple",0.01f);
+        hashPrice.put("green-apple",0.03f);
+        hashPrice.put("pear",0.005f);
+        hashPrice.put("pitaya",0.02f);
+        hashPrice.put("lemon",0.025f);
+
+        hashPrice.put("bread2",0.11f);
+        hashPrice.put("bread3",0.125f);
+        hashPrice.put("bread4",0.165f);
+
+
+        hasBreadPrice.put("bread2",10);
+        hasBreadPrice.put("bread3",16);
+        hasBreadPrice.put("bread4",12);
+
+        hasBreadPrice.put("apple",9);
+        hasBreadPrice.put("green-apple",12);
+        hasBreadPrice.put("pear",5);
+        hasBreadPrice.put("pitaya",12);
+        hasBreadPrice.put("lemon",8);
+
+
+        hasfruitWeight.put("apple",800);
+        hasfruitWeight.put("green-apple",500);
+        hasfruitWeight.put("pear",600);
+        hasfruitWeight.put("pitaya",1000);
+        hasfruitWeight.put("lemon",300);
+
+        hasfruitWeight.put("bread2",-1);
+        hasfruitWeight.put("bread3",-1);
+        hasfruitWeight.put("bread4",-1);
+
+
     }
 
     // 服务器地址

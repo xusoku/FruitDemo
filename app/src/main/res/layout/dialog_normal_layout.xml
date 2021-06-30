@@ -1,70 +1,95 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="800dp"
-    android:layout_height="400dp"
-    android:background="@drawable/bg_linear">
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:clipChildren="false">
 
+    <ImageView
+        android:id="@+id/iv_bg"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
 
     <RelativeLayout
+        android:layout_width="800dp"
+        android:layout_height="400dp"
+        android:background="@drawable/bg_linear"
         android:layout_centerInParent="true"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
-        <com.sunmi.fruit.util.AppTextView
-            android:id="@+id/dialog_title"
+        android:clipChildren="false">
+
+        <ImageView
+            android:id="@+id/iv_flag"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/try_again"
-            android:textStyle="bold"
-            android:textSize="48sp"
-            android:gravity="center"
-            android:paddingStart="20dp"
-            android:paddingEnd="20dp"
-            android:textColor="@color/black"/>
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="-80dp"
+            android:src="@mipmap/icon_success" />
 
         <RelativeLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="31dp"
-            android:layout_centerHorizontal="true"
-            android:layout_below="@id/dialog_title">
+            android:layout_centerInParent="true">
 
-        <com.sunmi.fruit.util.AppMediumButton
-            android:id="@+id/confirm_btn"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="36sp"
-            android:minWidth="271dp"
-            android:minHeight="90dp"
-            android:paddingStart="40dp"
-            android:paddingTop="15dp"
-            android:paddingEnd="40dp"
-            android:paddingBottom="15dp"
-            android:gravity="center"
-            android:textColor="@color/black"
-            android:background="@drawable/confrim_bg"
-            android:text="@string/back_home"/>
-        <com.sunmi.fruit.util.AppMediumButton
-            android:id="@+id/cancel_btn"
-            android:layout_toRightOf="@id/confirm_btn"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="36sp"
-            android:layout_marginStart="48dp"
-            android:minWidth="271dp"
-            android:minHeight="90dp"
-            android:paddingStart="40dp"
-            android:paddingTop="15dp"
-            android:paddingEnd="40dp"
-            android:paddingBottom="15dp"
-            android:gravity="center"
-            android:textStyle="bold"
-            android:textColor="@color/white"
-            android:background="@drawable/cancel_bg"
-            android:text="@string/next_level"/>
+            <com.sunmi.fruit.util.AppTextView
+                android:id="@+id/dialog_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:paddingStart="20dp"
+                android:paddingEnd="20dp"
+                android:text="@string/try_again"
+                android:textColor="@color/black"
+                android:textSize="48sp"
+                android:textStyle="bold" />
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/dialog_title"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="31dp">
+
+                <com.sunmi.fruit.util.AppMediumButton
+                    android:id="@+id/confirm_btn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/confrim_bg"
+                    android:gravity="center"
+                    android:minWidth="271dp"
+                    android:minHeight="90dp"
+                    android:paddingStart="40dp"
+                    android:paddingTop="15dp"
+                    android:paddingEnd="40dp"
+                    android:paddingBottom="15dp"
+                    android:text="@string/back_home"
+                    android:textColor="@color/black"
+                    android:textSize="36sp" />
+
+                <com.sunmi.fruit.util.AppMediumButton
+                    android:id="@+id/cancel_btn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="48dp"
+                    android:layout_toRightOf="@id/confirm_btn"
+                    android:background="@drawable/cancel_bg"
+                    android:gravity="center"
+                    android:minWidth="271dp"
+                    android:minHeight="90dp"
+                    android:paddingStart="40dp"
+                    android:paddingTop="15dp"
+                    android:paddingEnd="40dp"
+                    android:paddingBottom="15dp"
+                    android:text="@string/next_level"
+                    android:textColor="@color/white"
+                    android:textSize="36sp"
+                    android:textStyle="bold" />
+            </RelativeLayout>
         </RelativeLayout>
+
     </RelativeLayout>
 
-
+    <ImageView
+        android:id="@+id/iv_fg"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
 
 </RelativeLayout>

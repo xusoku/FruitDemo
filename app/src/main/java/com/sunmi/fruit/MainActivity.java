@@ -10,12 +10,14 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.ActionBar;
 
+import com.sunmi.fruit.animutils.AnimationsContainer;
 import com.sunmi.fruit.util.CircleProgressView;
 import com.sunmi.fruit.util.HttpUtil;
 import com.sunmi.fruit.util.LogSunmi;
 import com.sunmi.fruit.util.PrinterManagerUtil;
 import com.sunmi.fruit.util.ScaleManagerUtil;
 import com.sunmi.fruit.util.SharedPreferencesUtil;
+import com.sunmi.fruit.util.SoundPoolUtil;
 import com.sunmi.fruit.util.SwitchCompatEx;
 import com.sunmi.fruit.util.Utils;
 
@@ -35,7 +37,6 @@ public class MainActivity extends BaseActivity {
         TextView ai_title1 = findViewById(R.id.ai_title1);
         TextView ai_title2 = findViewById(R.id.ai_title2);
         TextView btn_text = findViewById(R.id.btn_text);
-
 
         SwitchCompatEx switchCompatEx = findViewById(R.id.switchs);
         if (Constant.locName.equals("en")) {
@@ -65,9 +66,7 @@ public class MainActivity extends BaseActivity {
 
         findViewById(R.id.btn_text).setOnClickListener(v -> {
             startActivity(new Intent(this, MainActivity2.class));
-//            Utils. cancelAnimationScale();
         });
-//        Utils.animationScale(progressView,true);
 
 
     }

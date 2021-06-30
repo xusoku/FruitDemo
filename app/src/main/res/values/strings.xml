@@ -2,18 +2,19 @@
     <string name="app_name">S2 Demo</string>
     <string name="sunmi">SUNMI</string>
     <string name="game">Game</string>
-    <string name="unkonw">未知</string>
-    <string name="recing">识别中</string>
+    <string name="unkonw">Unknown</string>
+    <string name="recing">Recognizing...</string>
     <string name="ai_title">AI-powered Eyes</string>
     <string name="ai_title1">A great helper that weighs for you</string>
     <string name="ai_title2">Game &#38; Gift</string>
     <string name="jump_start">START</string>
 
-    <string name="gane_title1">Round1: Put an %s on the scale in 45s,</string>
-    <string name="gane_title2">Round2: Please give me around 1000g of %s</string>
+    <string name="gane_title1">Round1: Please give me %dRMB of %s! The countdown is on!</string>
+    <string name="gane_title2">Round2: Please give me around %dg of %s! Tick-tock tick-tock...</string>
     <string name="gane_title2_1">in\.\.\. 30s!</string>
-    <string name="gane_title3">Round3: Can you give me 5 RMB of %s in\.\.\. 20s?</string>
+    <string name="gane_title3">Round3: Please give me around %dRMB of %s! Chop-chop!</string>
     <string name="gane_title_sub">and I will tell you its weight and price.</string>
+    <string name="single_type" >Price(¥/500g)</string>
 
     <string name="dialog_text">Nice work! Let’s continue!</string>
     <string name="back_home">MainMenu</string>
@@ -22,7 +23,7 @@
     <string name="take_shop" >Put the item on the scale</string>
     <string name="type" >Itme</string>
     <string name="weight" >Weight(g)</string>
-    <string name="price" >Price(RMB)</string>
+    <string name="price" >Price(¥)</string>
     <string name="try_again">Have another go! You are one step away from the gift!</string>
     <string name="game_over">Congratulations！</string>
     <string name="tip_lucky">We get you a gift! Check your receipt!</string>

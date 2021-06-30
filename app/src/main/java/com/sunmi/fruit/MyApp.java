@@ -15,6 +15,7 @@ import androidx.annotation.RequiresApi;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
+import com.sunmi.fruit.animutils.AnimationsContainer;
 import com.sunmi.fruit.bean.ResultBean;
 import com.sunmi.fruit.util.HttpUtil;
 import com.sunmi.fruit.util.LogSunmi;
@@ -39,6 +40,8 @@ import static com.sunmi.fruit.Constant.locName;
 
 public class MyApp extends Application {
     public static MyApp mApp;
+    public static AnimationsContainer animation;
+    public static AnimationsContainer loading_anim_bg;
     @Override
     public void onCreate() {
         super.onCreate();
