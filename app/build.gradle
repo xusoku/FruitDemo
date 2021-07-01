@@ -115,7 +115,7 @@ dependencies {
 //    implementation 'com.sunmi:SunmiHttpLib:1.0.35'
 
     implementation 'com.alibaba:fastjson:1.1.71.android'
-
+    implementation'com.sunmi:SunmiWidgetLib:1.0.9'
     implementation 'com.sunmi:printerlibrary:1.0.13'
 
     implementation 'com.squareup.okhttp3:okhttp:3.10.0'

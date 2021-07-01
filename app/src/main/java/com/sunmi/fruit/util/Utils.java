@@ -8,6 +8,7 @@ import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Build;
+import android.text.TextUtils;
 import android.util.Base64;
 import android.view.View;
 import android.view.animation.DecelerateInterpolator;
@@ -161,5 +162,37 @@ public class Utils {
         animatorSet.start();
     }
 
+
+    public static void FixMock(final Context context){
+        InputDialogF mInputDialog= new InputDialogF.Builder()
+                .setTitle("修改域名")
+                .setLeftText("确定")
+                .setRightText("取消")
+                .setEditText("http://expo-fruit-det.test.sunmi.com/v1/fruit/recognition")
+                .setHasMiddleBtn(false) // 是否显示中间的按钮
+                .setInputEnable(true)  // 是否可以进行输入
+                .setCallBack(new InputDialogF.DialogOnClickCallback() {
+                    @Override
+                    public void left(String text) { // 点击左边的按钮会回调该方法
+                        if(!TextUtils.isEmpty(text)){
+                            SharedPreferencesUtil.setString(context,text,"mock_env");
+                        }
+                    }
+
+                    @Override
+                    public void middle(String text) {  // 点击中间的按钮会回调该方法
+
+                    }
+
+                    @Override
+                    public void right(String text) { // 点击右边的按钮会回调该方法
+                    }
+                })
+                .build(context);
+        mInputDialog.setLeftBtnEnable(true); // 设置左边按钮enable状态
+        mInputDialog.setMiddleBtnEnable(true); // 设置中间按钮enable状态
+        mInputDialog.setRightBtnEnable(true); // 设置右边按钮enable状态
+        mInputDialog.show();
+    }
 
 }

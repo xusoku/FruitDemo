@@ -2,9 +2,11 @@ package com.sunmi.fruit.util;
 
 
 import android.text.TextUtils;
+import android.widget.TextView;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
+import com.sunmi.fruit.MyApp;
 import com.sunmi.fruit.bean.ResultBean;
 
 import org.json.JSONArray;
@@ -53,6 +55,10 @@ public class HttpUtil {
     public void post(String requestBody, HttpResults httpResults) {
         if (oneSecondAction()) {
             return;
+        }
+        url=SharedPreferencesUtil.getString(MyApp.mApp,"mock_env");
+        if(TextUtils.isEmpty(url)){
+            url = "http://expo-fruit-det.test.sunmi.com/v1/fruit/recognition";
         }
         RequestBody body = new FormBody.Builder()
                 .add("image", requestBody)

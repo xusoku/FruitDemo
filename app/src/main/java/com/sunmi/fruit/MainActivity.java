@@ -4,8 +4,10 @@ import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.CompoundButton;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.appcompat.app.ActionBar;
@@ -28,11 +30,15 @@ public class MainActivity extends BaseActivity {
 
     private static final String TAG = "MainActivity";
     private CircleProgressView progressView;
+    private int clickNum;
+    private long beginTime;
+    private long endTime;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        ImageView image_logo = findViewById(R.id.image_logo);
         TextView ai_title = findViewById(R.id.ai_title);
         TextView ai_title1 = findViewById(R.id.ai_title1);
         TextView ai_title2 = findViewById(R.id.ai_title2);
@@ -69,6 +75,22 @@ public class MainActivity extends BaseActivity {
             startActivity(new Intent(this, MainActivity2.class));
         });
 
+        image_logo.setOnClickListener(v->{
+
+            if (clickNum == 0) {
+                beginTime = System.currentTimeMillis();
+            } else {
+                endTime = System.currentTimeMillis();
+            }
+            if (endTime - beginTime > 30 * 1000) {
+                beginTime = System.currentTimeMillis();
+                clickNum = 0;
+            }
+            clickNum++;
+            if (clickNum == 5) {
+                Utils.FixMock(this);
+            }
+        });
     }
 
     @Override
