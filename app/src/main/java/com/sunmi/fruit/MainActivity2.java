@@ -93,6 +93,7 @@ public class MainActivity2 extends BaseActivity {
                 if (countSecond == 0) {
                     this.removeMessages(4);
                     customEndDialog.dismiss();
+                    desHandler();
                     finish();
                 }
             }
@@ -167,6 +168,10 @@ public class MainActivity2 extends BaseActivity {
                 LogSunmi.e(TAG, "objectWeight =" + objectWeight + "  objectPrice =" + objectPrice + "  price =" + price + "  factorPrice =" + factorPrice + "  factorWeight =" + factorWeight + "  minPrice =" + minPrice + "  maxPrice=" + maxPrice + " minWeight=" + minWeight + " maxWeight=" + maxWeight);
 
                 CameraManagerUtil.getInstance().takePicture(nameFF -> {
+
+                    if (isEnd|| (customEndDialog != null && customEndDialog.isShowing())) {
+                        return;
+                    }
                     runOnUiThread(new Runnable() {
                         @Override
                         public void run() {
@@ -184,6 +189,7 @@ public class MainActivity2 extends BaseActivity {
                             text_game_type.setText(isEn ? Constant.hashNameEn.get(nameF) : Constant.hashName.get(nameF));
                             if (currentLevel == 1) {
                                 if (nameF.equals(name) && (price >= minPrice && price <= maxPrice)) {
+                                    isEnd = true;
                                     text_game_type.setTextColor(Color.GREEN);
                                     text_game_price.setTextColor(Color.GREEN);
                                     text_game_weight.setTextColor(Color.GREEN);
@@ -203,6 +209,7 @@ public class MainActivity2 extends BaseActivity {
                                 }
                             } else if (currentLevel == 2) {
                                 if (nameF.equals(name) && (net >= minWeight && net <= maxWeight)) {
+                                    isEnd = true;
                                     text_game_type.setTextColor(Color.GREEN);
                                     text_game_price.setTextColor(Color.GREEN);
                                     text_game_weight.setTextColor(Color.GREEN);
@@ -223,6 +230,7 @@ public class MainActivity2 extends BaseActivity {
                                 }
                             } else if (currentLevel == 3) {
                                 if (nameF.equals(name) && (price >= minPrice && price <= maxPrice)) {
+                                    isEnd = true;
                                     text_game_type.setTextColor(Color.GREEN);
                                     text_game_price.setTextColor(Color.GREEN);
                                     text_game_weight.setTextColor(Color.GREEN);
@@ -263,10 +271,10 @@ public class MainActivity2 extends BaseActivity {
             @Override
             public void getResultRate(int net, int tare, boolean isStable) {
 
-                if (TextUtils.isEmpty(name) || (customEndDialog != null && customEndDialog.isShowing())) {
+                LogSunmi.e("TAG", isEnd+"  秤 结果=  获取称量净重=" + net + "  获取称量⽪重=" + tare + "   秤稳定状态=" + isStable);
+                if (isEnd||TextUtils.isEmpty(name) || (customEndDialog != null && customEndDialog.isShowing())) {
                     return;
                 }
-//                LogSunmi.e("TAG", "秤 结果=  获取称量净重=" + net + "  获取称量⽪重=" + tare + "   秤稳定状态=" + isStable);
                 runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
@@ -308,7 +316,7 @@ public class MainActivity2 extends BaseActivity {
 
 
     private void fristLevel() {
-
+        isEnd = false;
         text_game_type.setText(MyApp.mApp.getResources().getString(R.string.unkonw));
         text_game_type.setTextColor(getResources().getColor(R.color.color_9D9D9D));
         text_game_price.setTextColor(getResources().getColor(R.color.color_9D9D9D));
@@ -342,6 +350,7 @@ public class MainActivity2 extends BaseActivity {
     }
 
     private void secondLevel() {
+        isEnd = false;
         text_game_type.setText(MyApp.mApp.getResources().getString(R.string.unkonw));
         text_game_type.setTextColor(getResources().getColor(R.color.color_9D9D9D));
         text_game_price.setTextColor(getResources().getColor(R.color.color_9D9D9D));
@@ -383,6 +392,7 @@ public class MainActivity2 extends BaseActivity {
     }
 
     private void thridLevel() {
+        isEnd = false;
         text_game_type.setText(MyApp.mApp.getResources().getString(R.string.unkonw));
         text_game_type.setTextColor(getResources().getColor(R.color.color_9D9D9D));
         text_game_price.setTextColor(getResources().getColor(R.color.color_9D9D9D));
@@ -478,10 +488,6 @@ public class MainActivity2 extends BaseActivity {
     CustomDialog customEndDialog;
 
     public void showEndDialog() {
-        if (isEnd) {
-            return;
-        }
-        isEnd = true;
         if (customEndDialog != null && customEndDialog.isShowing()) {
             customEndDialog.dismiss();
         }
@@ -495,6 +501,7 @@ public class MainActivity2 extends BaseActivity {
         customEndDialog.setOnDialogItemClickListener(new CustomDialog.OnCustomDialogItemClickListener() {
             @Override
             public void OnCustomDialogItemClick(CustomDialog dialog, View view) {
+                desHandler();
                 finish();
             }
         });
@@ -514,14 +521,32 @@ public class MainActivity2 extends BaseActivity {
         CameraManagerUtil.getInstance().releaseCamera();
         MyApp.animation = null;
         MyApp.loading_anim_bg = null;
+        desHandler();
+        if(customEndDialog!=null){
+            customEndDialog.onDestory();
+        }
+    }
+
+    @Override
+    public void finish() {
+        super.finish();
+        PrinterManagerUtil.getInstance().onDestroy();
+        ScaleManagerUtil.getInstance().destory();
+        CameraManagerUtil.getInstance().releaseCamera();
+        MyApp.animation = null;
+        MyApp.loading_anim_bg = null;
+        desHandler();
+        if(customEndDialog!=null){
+            customEndDialog.onDestory();
+        }
+    }
+
+    private void desHandler(){
         if (handler != null) {
             handler.removeMessages(1);
             handler.removeMessages(2);
             handler.removeMessages(3);
             handler.removeMessages(4);
-        }
-        if(customEndDialog!=null){
-            customEndDialog.onDestory();
         }
     }
 }

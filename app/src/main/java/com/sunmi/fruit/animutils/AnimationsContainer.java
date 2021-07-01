@@ -154,7 +154,7 @@ public class AnimationsContainer {
                         }
                     }
                     long dTime=System.currentTimeMillis();
-                    LogSunmi.e("dTime= "+(dTime-sTime));
+//                    LogSunmi.e("dTime= "+(dTime-sTime));
 
                 }
             };

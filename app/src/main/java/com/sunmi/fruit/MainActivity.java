@@ -65,10 +65,16 @@ public class MainActivity extends BaseActivity {
         progressView=findViewById(R.id.progress);
 
         findViewById(R.id.btn_text).setOnClickListener(v -> {
+            ScaleManagerUtil.getInstance().destory();
             startActivity(new Intent(this, MainActivity2.class));
         });
 
+    }
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+        ScaleManagerUtil.getInstance().destory();
     }
 
     public void reload() {

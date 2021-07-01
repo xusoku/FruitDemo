@@ -265,7 +265,7 @@ public class CircleProgressView extends View {
      */
     public void setProgress(int progress) {
         int percent = progress * maxValue / maxValue;
-        LogSunmi.e("progress",percent+"---");
+//        LogSunmi.e("progress",percent+"---");
         if (percent < 0) {
             percent = 0;
         }
@@ -279,7 +279,7 @@ public class CircleProgressView extends View {
         int per40= (int) (maxValue*0.4f);
         int per35= (int) (maxValue*0.35f);
 
-        LogSunmi.e("percent","  per80="+per80+"  per60="+per60+"  per50="+per50+"  per40="+per40+"  per35="+per35);
+//        LogSunmi.e("percent","  per80="+per80+"  per60="+per60+"  per50="+per50+"  per40="+per40+"  per35="+per35);
         if(percent==per80||percent==per60||percent==per50||percent==per40){
             Utils.animationScale(this);
         }else if(percent<=per35){
