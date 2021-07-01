@@ -74,7 +74,7 @@ public class CameraManagerUtil implements TextureView.SurfaceTextureListener {
                     ByteBuffer buffer = image.getPlanes()[0].getBuffer();
                     byte[] bytes = new byte[buffer.remaining()];
                     buffer.get(bytes);//由缓冲区存入字节数组
-                    final Bitmap bitmap = BitmapFactory.decodeByteArray(bytes, 0, bytes.length);
+                    Bitmap bitmap = BitmapFactory.decodeByteArray(bytes, 0, bytes.length);
                     if (bitmap != null) {
 //                        String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(new Date());
 //                        String fileName = "IMG_"+timeStamp+".jpg";
@@ -87,7 +87,9 @@ public class CameraManagerUtil implements TextureView.SurfaceTextureListener {
 //                        bitmap.compress(Bitmap.CompressFormat.JPEG, 100, fos);
 //                        fos.flush();
 //                        fos.close();
-
+                        int w = bitmap.getWidth(); // 得到图片的宽，高
+                        int h = bitmap.getHeight();
+                        bitmap=Bitmap.createBitmap(bitmap, 0, h/9, w, h/9*8, null, false);
                         String s=Utils.bitmapToBase64(bitmap);
                         LogSunmi.e(TAG, "s="+"请求");
                         HttpUtil.getInstance().post(s, new HttpUtil.HttpResults() {
@@ -104,6 +106,8 @@ public class CameraManagerUtil implements TextureView.SurfaceTextureListener {
                         });
 
                     }
+                    bitmap.recycle();
+                    bitmap = null;
                     image.close();
                 } catch (Exception e) {
                     e.printStackTrace();
