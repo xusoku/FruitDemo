@@ -27,12 +27,8 @@ android {
         targetCompatibility JavaVersion.VERSION_1_8
     }
     signingConfigs {
-        sunmi {
-            storeFile file('../sunmi.keystore')
-            storePassword "sunmi388"
-            keyAlias "Sunmi"
-            keyPassword "sunmi388"
-        }
+       
+        
     }
 
     buildTypes {
